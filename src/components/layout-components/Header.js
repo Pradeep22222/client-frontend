@@ -204,29 +204,41 @@ useEffect(() => {
 
             {windowWidth < 992 &&
               (user?._id ? (
-                <Dropdown>
-                  <Dropdown.Toggle
-                    variant="none"
-                    id="dropdown-basic"
-                    className="color-white dropdown-toggle "
-                  >
-                    Profile
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu
-                    variant="dark"
-                    className="profile__toggle-menu -util-togglemenu"
-                  >
-                    <Link className="nav-link">Profile</Link>
-                    <Link className="nav-link">Purchases</Link>
-                    <Link className="nav-link">Reviews</Link>
-                    <Link className="nav-link">Payment Methods</Link>
-                    <Link className="nav-link">Close Account</Link>
-                    <Link className="nav-link">Switch Account</Link>
-                    <Link className="nav-link" onClick={handleOnLogout}>
-                      Sign Out
-                    </Link>
-                  </Dropdown.Menu>
-                </Dropdown>
+                <div
+  className="user_profile__profile clickable-profile"
+  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+>
+  <div className="user_profile__trigger">
+    <i className="fa-solid fa-user -util-font15"></i>
+    <i
+      className={`fa-solid fa-caret-down ${
+        isDropdownOpen ? "-util-rotate_180" : ""
+      }`}
+    ></i>
+  </div>
+
+  <Dropdown show={isDropdownOpen}>
+    <Dropdown.Toggle
+      variant="success"
+      id="dropdown-basic"
+      className="user_profile__profie-dropdown"
+    ></Dropdown.Toggle>
+    <Dropdown.Menu className="user_profile__profie-dropdown-items -util-togglemenu">
+      <Link className="nav-link">Profile</Link>
+      <Link className="nav-link" to="/purchases">
+        Purchases
+      </Link>
+      <Link className="nav-link">Reviews</Link>
+      <Link className="nav-link">Payment Methods</Link>
+      <Link className="nav-link">Close Account</Link>
+      <Link className="nav-link">Switch Account</Link>
+      <Link className="nav-link" onClick={handleOnLogout}>
+        Sign Out
+      </Link>
+    </Dropdown.Menu>
+  </Dropdown>
+</div>
+
               ) : (
                 <div className="-util-pointer" onClick={handleOnLogin}>
                   Login
@@ -291,40 +303,41 @@ useEffect(() => {
            !`}
                 </p>
                 {user?._id ? (
-                  <p className="user_profile__profile">
-                    <Button
-                      variant="none"
-                      className=" user_profile__profie-btn btn-logout text-white"
-                    >
-                      <i className="fa-solid fa-user -util-font15"></i>
-                      <i
-                        className={`fa-solid fa-caret-down ${
-                          isDropdownOpen ? "-util-rotate_180" : ""
-                        }`}
-                      ></i>
-                    </Button>
-                    <Dropdown
-                      show={isDropdownOpen}
-                      onToggle={handleDropdownToggle}
-                    >
-                      <Dropdown.Toggle
-                        variant="success"
-                        id="dropdown-basic"
-                        className="user_profile__profie-dropdown"
-                      ></Dropdown.Toggle>
-                      <Dropdown.Menu className="user_profile__profie-dropdown-items -util-togglemenu">
-                        <Link className="nav-link">Profile</Link>
-                        <Link className="nav-link"  to="/purchases">Purchases</Link>
-                        <Link className="nav-link">Reviews</Link>
-                        <Link className="nav-link">Payment Methods</Link>
-                        <Link className="nav-link">Close Account</Link>
-                        <Link className="nav-link">Switch Account</Link>
-                        <Link className="nav-link" onClick={handleOnLogout}>
-                          Sign Out
-                        </Link>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </p>
+                  <div
+  className="user_profile__profile clickable-profile"
+  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+>
+  <div className="user_profile__trigger">
+    <i className="fa-solid fa-user -util-font15"></i>
+    <i
+      className={`fa-solid fa-caret-down ${
+        isDropdownOpen ? "-util-rotate_180" : ""
+      }`}
+    ></i>
+  </div>
+
+  <Dropdown show={isDropdownOpen}>
+    <Dropdown.Toggle
+      variant="success"
+      id="dropdown-basic"
+      className="user_profile__profie-dropdown"
+    ></Dropdown.Toggle>
+    <Dropdown.Menu className="user_profile__profie-dropdown-items -util-togglemenu">
+      <Link className="nav-link">Profile</Link>
+      <Link className="nav-link" to="/purchases">
+        Purchases
+      </Link>
+      <Link className="nav-link">Reviews</Link>
+      <Link className="nav-link">Payment Methods</Link>
+      <Link className="nav-link">Close Account</Link>
+      <Link className="nav-link">Switch Account</Link>
+      <Link className="nav-link" onClick={handleOnLogout}>
+        Sign Out
+      </Link>
+    </Dropdown.Menu>
+  </Dropdown>
+</div>
+
                 ) : (
                   <div
                     className="nav-link header_login-btn"
