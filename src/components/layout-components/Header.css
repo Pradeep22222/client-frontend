@@ -38,7 +38,7 @@
   transform-origin: left;
 }
 .search_form__control:focus {
-  color: var(--color-pastrelred);
+  color: var(--color-grey-dark-2);
   border-radius: 5px;
   position: relative;
   transform: scaleX(1.07);

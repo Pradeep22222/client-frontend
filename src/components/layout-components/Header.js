@@ -250,31 +250,11 @@ useEffect(() => {
               className="d-flex align-items-center mb-2 categories_search"
               role="search"
             >
-              <Dropdown>
-                <Dropdown.Toggle
-                  variant="none"
-                  id="dropdown-basic"
-                  className="color-white dropdown-toggle search__filter-toggle"
-                >
-                  All
-                </Dropdown.Toggle>
-                <Dropdown.Menu
-                  variant="dark"
-                  className="categories_search__menu -util-togglemenu"
-                >
-                  <Dropdown.Item href="#/action-1">All</Dropdown.Item>
-                  <Dropdown.Item href="#/action-1">Category 1</Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">Category 2</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Category 3</Dropdown.Item>
-                  <Dropdown.Item href="#/action-1">Category 4</Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">Category 5</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Category 6</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
               <Form.Control
                 className="form-control me-2 search_form__control"
                 type="text"
                 aria-label="Search"
+                placeholder="Search"
               />
               <Button variant="none" className="search_icon">
                 <i className="fa-solid fa-magnifying-glass -util-font15 color-pastrelred "></i>
